@@ -38,6 +38,7 @@ class MobList:
 
     def update_mobs(self, new_mobs):
         if not self.previous_mobs:
+            self.previous_mobs = self.mobs
             self.mobs = new_mobs
             return []
 
@@ -138,7 +139,6 @@ class Battlefield:
 
     def stop(self):
         self.running = False
-
 
 
 async def main():
