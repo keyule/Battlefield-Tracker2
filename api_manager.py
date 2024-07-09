@@ -2,7 +2,7 @@ import requests
 
 class ApiManager:
     def __init__(self, bearer_token):
-        self.request_id = 638545031388531177
+        self.request_id = 638554480265146035
         self.bearer_token = bearer_token
         self.body_hmac = "H53bD3fYs0UvGqpF5bFXDiBYsx85uaCGoII0U579GBc=" # HMAC is a fixed value
 
@@ -29,6 +29,7 @@ class ApiManager:
             return self.get_battlefields()
         
         self.request_id += 1
+        #print (response)
         return response.json()
 
     def get_world_battlefields(self):

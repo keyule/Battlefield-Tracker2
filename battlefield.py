@@ -150,7 +150,7 @@ async def main():
     world_mob_list = MobList()
 
     if TELEGRAM_ALERTS_ENABLED:
-        telegram_bot = TelegramBot(TELEGRAM_TOKEN, mob_list)
+        telegram_bot = TelegramBot(TELEGRAM_TOKEN, mob_list, world_mob_list)
     else:
         telegram_bot = None
 

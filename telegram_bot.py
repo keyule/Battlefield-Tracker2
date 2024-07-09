@@ -5,16 +5,19 @@ import asyncio
 from prettytable import PrettyTable
 
 class TelegramBot:
-    def __init__(self, token, mob_list):
+    def __init__(self, token, mob_list, world_mob_list):
         self.token = token
         self.mob_list = mob_list
+        self.world_mob_list = world_mob_list
         self.application = Application.builder().token(token).build()
         # Add command handlers
         self.application.add_handler(CommandHandler("subscribe", self.subscribe_command))
         self.application.add_handler(CommandHandler("unsubscribe", self.unsubscribe_command))
         self.application.add_handler(CommandHandler("mobs", self.mob_command))
+        self.application.add_handler(CommandHandler("worldmobs", self.world_mob_command))
         self.running = True
         self.id_to_mob_id = {} 
+        self.id_to_world_mob_id = {} 
 
     async def subscribe_command(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         user_id = update.effective_user.id
@@ -74,6 +77,26 @@ class TelegramBot:
                 self.id_to_mob_id.clear()
                 for idx, mob in enumerate(self.mob_list.mobs, start=1):
                     self.id_to_mob_id[idx] = mob.mob_id 
+                    mob_table.add_row([idx, mob.region, mob.level, mob.spawnTime])
+
+                message = f"**Mob Information:**\n```{mob_table}```"
+            await update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN_V2)
+
+    async def world_mob_command(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+            user = update.effective_user 
+            print(f"Command executed by UserID: {user.id}, Username: {user.username}")  # Log the user's ID and username
+
+            mobs = self.world_mob_list.get_current_mobs()
+            if not mobs:
+                message = "No mobs available"
+            else:
+                mob_table = PrettyTable()
+        
+                mob_table.field_names = ["ID", "Reg", "Lv", "SpawnTime"]
+
+                self.id_to_world_mob_id.clear()
+                for idx, mob in enumerate(self.world_mob_list.mobs, start=1):
+                    self.id_to_world_mob_id[idx] = mob.mob_id 
                     mob_table.add_row([idx, mob.region, mob.level, mob.spawnTime])
 
                 message = f"**Mob Information:**\n```{mob_table}```"
