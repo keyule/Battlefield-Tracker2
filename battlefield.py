@@ -14,13 +14,14 @@ load_dotenv()
 
 # Constants
 REGION_MAP = {0: "Pirate", 1: "Cat", 2: "Wolf", 3: "Food"}
-TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
-TELEGRAM_ALERTS_ENABLED = os.getenv('TELEGRAM_ALERTS_ENABLED', 'False') == 'True'
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+TELEGRAM_ALERTS_ENABLED = os.getenv("TELEGRAM_ALERTS_ENABLED", "False") == "True"
 SLEEP_TIME = 60  # Sleep time in seconds (5 minutes)
-TIMEZONE = pytz.timezone('Asia/Singapore')
+TIMEZONE = pytz.timezone("Asia/Singapore")
+
 
 class Mob:
-    def __init__(self, mob_id, region, level, spawnTime = "Unknown"):
+    def __init__(self, mob_id, region, level, spawnTime="Unknown"):
         self.mob_id = mob_id
         self.region = region
         self.level = level
@@ -28,7 +29,7 @@ class Mob:
 
     def set_time(self):
         current_time = datetime.now(TIMEZONE)
-        self.spawnTime = current_time.strftime('%H:%M')
+        self.spawnTime = current_time.strftime("%H:%M")
 
 
 class MobList:
@@ -50,12 +51,15 @@ class MobList:
                 mob.set_time()
                 new_mobs_list.append(mob)
 
-        self.mobs = [mob for mob in self.mobs if mob.mob_id in {m.mob_id for m in new_mobs}] + new_mobs_list
+        self.mobs = [
+            mob for mob in self.mobs if mob.mob_id in {m.mob_id for m in new_mobs}
+        ] + new_mobs_list
 
         return new_mobs_list
 
     def get_current_mobs(self):
         return self.mobs
+
 
 class UI:
     @staticmethod
@@ -72,14 +76,13 @@ class UI:
     def print_alert_message(alert_message):
         print(alert_message)
 
+
 class Alert:
     @staticmethod
     async def alert_for_new_mobs(new_mobs, telegram_bot, mob_type=""):
         for mob in new_mobs:
             if mob_type:
-                alert_message = (
-                    f"New {mob_type.upper()} Mob Spawned! Level: {mob.level} region: {mob.region}"
-                )
+                alert_message = f"New {mob_type.upper()} Mob Spawned! Level: {mob.level} region: {mob.region}"
             else:
                 alert_message = (
                     f"New Mob Spawned! Level: {mob.level} region: {mob.region}"
@@ -89,7 +92,7 @@ class Alert:
                 await telegram_bot.send_alert(alert_message)
 
             UI.print_alert_message(alert_message)
-            
+
 
 class Battlefield:
     def __init__(self, bearer_token, mob_list, world_mob_list, telegram_bot):
@@ -104,12 +107,12 @@ class Battlefield:
         data = get_data_func()
         new_mobs = []
         for region in data["regions"]:
-            region_name = REGION_MAP.get(region['region'], "Unknown")
+            region_name = REGION_MAP.get(region["region"], "Unknown")
             for battlefield in region["battlefields"]:
                 mob = Mob(
-                    mob_id=battlefield['id'],
+                    mob_id=battlefield["id"],
                     region=region_name,
-                    level=battlefield['level'],
+                    level=battlefield["level"],
                 )
                 new_mobs.append(mob)
 
@@ -122,9 +125,14 @@ class Battlefield:
     async def run(self):
         try:
             while self.running:
-                await self.process_mobs(self.api_manager.get_battlefields, self.mob_list)
-                await self.process_mobs(self.api_manager.get_world_battlefields, self.world_mob_list, "WORLD")
-
+                await self.process_mobs(
+                    self.api_manager.get_battlefields, self.mob_list
+                )
+                await self.process_mobs(
+                    self.api_manager.get_world_battlefields,
+                    self.world_mob_list,
+                    "WORLD",
+                )
 
                 if self.timer > 5:
                     self.timer = 0
@@ -136,14 +144,20 @@ class Battlefield:
         except asyncio.CancelledError:
             self.stop()
 
-
     def stop(self):
         self.running = False
 
 
 async def main():
-    parser = argparse.ArgumentParser(description='Run the battlefield monitoring script.')
-    parser.add_argument('-token', '--bearer_token', required=True, help='Bearer token for authentication')
+    parser = argparse.ArgumentParser(
+        description="Run the battlefield monitoring script."
+    )
+    parser.add_argument(
+        "-token",
+        "--bearer_token",
+        required=True,
+        help="Bearer token for authentication",
+    )
     args = parser.parse_args()
 
     mob_list = MobList()
@@ -176,6 +190,7 @@ async def main():
             await asyncio.gather(battlefield_task)
 
     print("Successfully shutdown the service.")
+
 
 if __name__ == "__main__":
     asyncio.run(main())
