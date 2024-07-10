@@ -8,3 +8,5 @@ env/
 __pycache__/
 
 subscribers.txt
+
+.idea/
