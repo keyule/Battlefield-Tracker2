@@ -17,7 +17,6 @@ class TelegramBot:
         self.application.add_handler(CommandHandler("worldmobs", self.world_mob_command))
         self.running = True
         self.id_to_mob_id = {} 
-        self.id_to_world_mob_id = {} 
 
     async def subscribe_command(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         user_id = update.effective_user.id
@@ -75,7 +74,7 @@ class TelegramBot:
                 mob_table.field_names = ["ID", "Reg", "Lv", "SpawnTime"]
 
                 self.id_to_mob_id.clear()
-                for idx, mob in enumerate(self.mob_list.mobs, start=1):
+                for idx, mob in enumerate(mobs, start=1):
                     self.id_to_mob_id[idx] = mob.mob_id 
                     mob_table.add_row([idx, mob.region, mob.level, mob.spawnTime])
 
@@ -86,20 +85,20 @@ class TelegramBot:
             user = update.effective_user 
             print(f"Command executed by UserID: {user.id}, Username: {user.username}")  # Log the user's ID and username
 
-            mobs = self.world_mob_list.get_current_mobs()
-            if not mobs:
-                message = "No mobs available"
-            else:
-                mob_table = PrettyTable()
+            # mobs = self.world_mob_list.get_current_mobs()
+            # print(mobs[0].mob_id, mobs[0].region)
+            # if not mobs:
+            #     message = "No mobs available"
+            # else:
+            #     mob_table2 = PrettyTable()
         
-                mob_table.field_names = ["ID", "Reg", "Lv", "SpawnTime"]
+            #     mob_table2.field_names = ["Reg", "Lv", "SpawnTime"]
 
-                self.id_to_world_mob_id.clear()
-                for idx, mob in enumerate(self.world_mob_list.mobs, start=1):
-                    self.id_to_world_mob_id[idx] = mob.mob_id 
-                    mob_table.add_row([idx, mob.region, mob.level, mob.spawnTime])
+            #     for mobs in enumerate(mobs):
+            #         mob_table2.add_row([mobs.region, mobs.level, mobs.spawnTime])
 
-                message = f"**Mob Information:**\n```{mob_table}```"
+            #     message = f"**Mob Information:**\n```{mob_table2}```"
+            message = "test"
             await update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN_V2)
     
     async def start(self):

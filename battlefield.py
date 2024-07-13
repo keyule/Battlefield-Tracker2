@@ -7,6 +7,7 @@ from telegram_bot import TelegramBot
 from prettytable import PrettyTable
 from datetime import datetime
 import pytz
+import random
 
 
 # Load environment variables
@@ -16,7 +17,7 @@ load_dotenv()
 REGION_MAP = {0: "Pirate", 1: "Cat", 2: "Wolf", 3: "Food"}
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 TELEGRAM_ALERTS_ENABLED = os.getenv("TELEGRAM_ALERTS_ENABLED", "False") == "True"
-SLEEP_TIME = 60  # Sleep time in seconds (5 minutes)
+SLEEP_TIME = random.randint(30, 150)  # Sleep time random from 30s to 150s
 TIMEZONE = pytz.timezone("Asia/Singapore")
 
 
@@ -101,7 +102,6 @@ class Battlefield:
         self.telegram_bot = telegram_bot
         self.running = True
         self.world_mob_list = world_mob_list
-        self.timer = 0
 
     async def process_mobs(self, get_data_func, mob_list, mob_type=""):
         data = get_data_func()
@@ -121,6 +121,9 @@ class Battlefield:
         if new_mobs_list:
             UI.print_battlefield_info(mob_list)
             await Alert.alert_for_new_mobs(new_mobs_list, self.telegram_bot, mob_type)
+        else:
+            pass
+            #UI.print_battlefield_info(mob_list)
 
     async def run(self):
         try:
@@ -134,12 +137,9 @@ class Battlefield:
                     "WORLD",
                 )
 
-                if self.timer > 5:
-                    self.timer = 0
-                    time = datetime.now(TIMEZONE).strftime("%H:%M:%S")
-                    print("Last Updated:", time)
+                time = datetime.now(TIMEZONE).strftime("%H:%M:%S")
+                print("Last Updated:", time)
 
-                self.timer = self.timer + 1
                 await asyncio.sleep(SLEEP_TIME)
         except asyncio.CancelledError:
             self.stop()
