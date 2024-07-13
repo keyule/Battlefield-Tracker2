@@ -17,7 +17,7 @@ load_dotenv()
 REGION_MAP = {0: "Pirate", 1: "Cat", 2: "Wolf", 3: "Food"}
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 TELEGRAM_ALERTS_ENABLED = os.getenv("TELEGRAM_ALERTS_ENABLED", "False") == "True"
-SLEEP_TIME = random.randint(30, 150)  # Sleep time random from 30s to 150s
+SLEEP_TIME = 60  # Sleep time random from 30s to 150s
 TIMEZONE = pytz.timezone("Asia/Singapore")
 
 
@@ -139,8 +139,9 @@ class Battlefield:
 
                 time = datetime.now(TIMEZONE).strftime("%H:%M:%S")
                 print("Last Updated:", time)
-
-                await asyncio.sleep(SLEEP_TIME)
+                
+                totalSleep = SLEEP_TIME + random.randint(1, 120)
+                await asyncio.sleep(totalSleep)
         except asyncio.CancelledError:
             self.stop()
 
