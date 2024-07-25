@@ -46,7 +46,7 @@ class Monster:
         return self.current_hp < threshold
 
     def get_alert_message(self, threshold):
-        return f"Alert! Monster {self.monster_id} has HP below {threshold}! Current HP: {self.current_hp:,} @everyone"
+        return f"Alert! Monster {self.monster_id}, Level{self.level}, has HP below {threshold}! Current HP: {self.current_hp:,} @everyone"
 
     def __eq__(self, other):
         return self.monster_id == other.monster_id
@@ -218,7 +218,7 @@ class Battlefield:
 
         # Check thresholds and send alerts
         for monster in self.monster_list.monsters:
-            if monster.is_below_threshold(7000000):
+            if monster.is_below_threshold(1000000):
                 self.monster_list.alert_for_monster(monster, 1000000)
             if monster.is_below_threshold(500000):
                 self.monster_list.alert_for_monster(monster, 500000)
