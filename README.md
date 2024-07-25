@@ -30,8 +30,8 @@ pip install requests pytz python-dotenv prettytable python-telegram-bot
 ```
 3. Ensure that you have the necessary environment variables set. You can do this by creating a .env file in the same directory as the script with the following contents:
 ```plaintext
-TELEGRAM_TOKEN=your_bot_token
-TELEGRAM_ALERTS_ENABLED=False
+DISCORD_WEBHOOK=your_webhook_url
+DISCORD_ALERTS_ENABLED=True
 ```
 
 ## Usage

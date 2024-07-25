@@ -4,6 +4,8 @@ from telegram.ext import Application, CommandHandler, ContextTypes
 import asyncio
 from prettytable import PrettyTable
 
+#THIS IS NOT IN USE ANYMORE
+
 class TelegramBot:
     def __init__(self, token, mob_list, world_mob_list):
         self.token = token
@@ -13,8 +15,8 @@ class TelegramBot:
         # Add command handlers
         self.application.add_handler(CommandHandler("subscribe", self.subscribe_command))
         self.application.add_handler(CommandHandler("unsubscribe", self.unsubscribe_command))
-        self.application.add_handler(CommandHandler("mobs", self.mob_command))
-        self.application.add_handler(CommandHandler("worldmobs", self.world_mob_command))
+        #self.application.add_handler(CommandHandler("mobs", self.mob_command))
+        #self.application.add_handler(CommandHandler("worldmobs", self.world_mob_command))
         self.running = True
         self.id_to_mob_id = {} 
 
