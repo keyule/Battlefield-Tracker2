@@ -218,8 +218,6 @@ class Battlefield:
 
         # Check thresholds and send alerts
         for monster in self.monster_list.monsters:
-            if monster.is_below_threshold(1000000):
-                self.monster_list.alert_for_monster(monster, 1000000)
             if monster.is_below_threshold(500000):
                 self.monster_list.alert_for_monster(monster, 500000)
 
