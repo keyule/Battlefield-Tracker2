@@ -192,7 +192,7 @@ class Battlefield:
 
         if new_mobs_list:
             UI.print_battlefield_info(mob_list)
-            Alert.alert_for_new_mobs(new_mobs_list, self.telegram_bot, mob_type)
+            Alert.alert_for_new_mobs(new_mobs_list, mob_type)
         else:
             pass
             #UI.print_battlefield_info(mob_list)
@@ -212,7 +212,7 @@ class Battlefield:
                 )
                 new_monsters.append(monster)
 
-                #print(monster) 
+                print(monster) 
 
         self.monster_list.update_monsters(new_monsters)
 
