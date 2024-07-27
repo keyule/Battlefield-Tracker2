@@ -225,7 +225,7 @@ class Battlefield:
         try:
             while self.running:
                 self.process_mobs(self.api_manager.get_battlefields, self.mob_list)
-                self.process_mobs(self.api_manager.get_world_battlefields, self.world_mob_list, "WORLD")
+                self.process_mobs(self.api_manager.get_world_battlefields, self.world_mob_list, "Rift")
                 self.process_upper_battlefield()
 
                 time_str = datetime.now(TIMEZONE).strftime("%H:%M:%S")
