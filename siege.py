@@ -1,60 +1,25 @@
-from prettytable import PrettyTable
-from datetime import datetime
 import json
+import time
 
 class Node:
-    def __init__(self, territoryId, region, nodeNumber, reward):
+    def __init__(self, territoryId, region, nodeNumber, reward, HMAC):
         self.territoryId = territoryId
         self.region = region
         self.nodeNumber = nodeNumber
         self.reward = reward
+        self.HMAC = HMAC
         self.shieldEndTime = None
         self.defendingGuild = ""
-        self.defenders = []
+        self.defendersFTL = []
 
-    def get_territoryId(self):
-        return self._territoryId
+    
+    def update_from_api(self, shieldEndTime, guildName, id):
+        self.shieldEndTime = shieldEndTime
+        self.defendingGuild = guildName
+        self.id = id
 
-    def set_territoryId(self, value):
-        self._territoryId = value
-
-    def get_region(self):
-        return self._region
-
-    def set_region(self, value):
-        self._region = value
-        
-    def get_nodeNumber(self):
-        return self._nodeNumber
-
-    def set_nodeNumber(self, value):
-        self._nodeNumber = value
-
-    def get_reward(self):
-        return self._reward
-
-    def set_reward(self, value):
-        self._reward = value
-
-    def get_shieldEndTime(self):
-        return self._shieldEndTime
-
-    def set_shieldEndTime(self, value):
-        self._shieldEndTime = value
-
-    def get_defendingGuild(self):
-        return self._defendingGuild
-
-    def set_defendingGuild(self, value):
-        self._defendingGuild = value
-
-    def get_defenders(self):
-        return self._defenders
-
-    def add_defender(self, value):
-        if not isinstance(value, int):
-            raise ValueError("Defender must be an integer")
-        self._defenders.append(value)
+    def update_defendersFTL(self, bestFishLevel):
+        self.defendersFTL.append(bestFishLevel)
 
 class NodeList:
     def __init__(self, json_file):
@@ -70,5 +35,26 @@ class NodeList:
                     region=entry['region'],
                     nodeNumber=entry['nodeNumber'],
                     reward=entry['reward'],
+                    HMAC = entry['HMAC']
                 )
                 self.nodes.append(node)
+
+    def update_nodes_from_api(self, api_data, get_node_detail_func):
+        territory_infos = api_data.get('territoryInfos', [])
+        for info in territory_infos:
+            territory_id = info.get('id')
+            shield_end_time = info.get('shieldEndTime')
+            guild_preview = info.get('guildPreview')
+            guild_name = guild_preview.get('guildName') if guild_preview else "No Guild"
+            for node in self.nodes:
+                if node.territoryId == territory_id:
+                    node.update_from_api(shield_end_time, guild_name, territory_id)
+                    self.update_defendersFTL(node, get_node_detail_func)
+                time.sleep(1)
+
+    def update_defendersFTL(self, node, get_node_detail_func):
+        detail_data = get_node_detail_func(node.territoryId, node.HMAC)
+        defenders = detail_data.get('territoryDetailInfo', {}).get('defenders', [])
+        for defender in defenders:
+            best_fish_level = defender['accountPreview'].get('bestFishLevel')
+            node.update_defendersFTL(best_fish_level)

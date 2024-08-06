@@ -84,3 +84,46 @@ class ApiManager:
 
         self.request_id += 1
         return response.json()
+    
+    def get_siege_data(self):
+        url = "https://gv.gameduo.net/guild-domination-mode/load-all-territories"
+        headers = {
+            "Authorization": f"Bearer {self.bearer_token}",
+            "bodyhmac": self.body_hmac,
+            "Content-Type": "application/json",
+            "Host": "gv.gameduo.net",
+            "request-id": str(self.request_id),
+            "User-Agent": "UnityPlayer/2021.3.33f1 (UnityWebRequest/1.0, libcurl/8.4.0-DEV)",
+            "X-Unity-Version": "2021.3.33f1",
+            "Content-Length": "2",
+        }
+
+        response = requests.post(url, headers=headers, json={})
+        if response.status_code == 403:
+            self.update_bearer_token()
+            return self.get_battlefields()
+
+        self.request_id += 1
+        #print (response)
+        return response.json()
+    
+    def get_node_detail(self, node_id, node_hmac):
+        url = "https://gv.gameduo.net/guild-domination-mode/get-detail"
+        headers = {
+            "Authorization": f"Bearer {self.bearer_token}",
+            "bodyhmac": node_hmac,
+            "Content-Type": "application/json",
+            "Host": "gv.gameduo.net",
+            "request-id": str(self.request_id),
+            "User-Agent": "UnityPlayer/2021.3.33f1 (UnityWebRequest/1.0, libcurl/8.4.0-DEV)",
+            "Content-Length": "23",
+        }
+        body = {"territoryId": node_id}
+
+        response = requests.post(url, headers=headers, json=body)
+        if response.status_code == 403:
+            self.update_bearer_token()
+            return self.get_node_detail(node_hmac)
+
+        self.request_id += 1
+        return response.json()
