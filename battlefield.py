@@ -20,6 +20,7 @@ DISCORD_ALERTS_ENABLED = os.getenv("DISCORD_ALERTS_ENABLED", "False") == "True"
 DISCORD_WEBHOOK = os.getenv("DISCORD_WEBHOOK")
 SLEEP_TIME = 60  # Sleep time random from 30s to 150s
 TIMEZONE = pytz.timezone("Asia/Singapore")
+SIEGEDATA = "siegeDate.json"
 
 
 class Mob:
