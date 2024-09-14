@@ -10,8 +10,8 @@ import requests
 import time
 from siege import NodeList
 from utility import Utility
-import matplotlib.pyplot as plt
-from matplotlib.font_manager import FontProperties
+#import matplotlib.pyplot as plt
+#from matplotlib.font_manager import FontProperties
 from PIL import Image
 import io
 
@@ -319,13 +319,13 @@ class Battlefield:
                 self.process_mobs(self.api_manager.get_world_battlefields, self.world_mob_list, "Rift")
                 self.process_upper_battlefield()
 
-                if count == 0: 
-                    print("did this run?")
-                    self.process_siege_stuff()
-                    count = 5
+                # if count == 0: 
+                #     print("did this run?")
+                #     self.process_siege_stuff()
+                #     count = 5
 
                 
-                count = count - 1
+                # count = count - 1
 
                 time_str = datetime.now(TIMEZONE).strftime("%H:%M:%S")
                 print("Last Updated:", time_str)
