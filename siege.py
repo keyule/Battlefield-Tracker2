@@ -47,10 +47,11 @@ class NodeList:
             guild_preview = info.get('guildPreview')
             guild_name = guild_preview.get('guildName') if guild_preview else "No Guild"
             for node in self.nodes:
-                if node.territoryId == territory_id:
-                    node.update_from_api(shield_end_time, guild_name, territory_id)
-                    self.update_defendersFTL(node, get_node_detail_func)
-                time.sleep(1)
+                 if node.territoryId == territory_id:
+                     node.update_from_api(shield_end_time, guild_name, territory_id)
+            #         self.update_defendersFTL(node, get_node_detail_func)
+            #     time.sleep(1)
+        print("Finished updated Nodes")
 
     def update_defendersFTL(self, node, get_node_detail_func):
         detail_data = get_node_detail_func(node.territoryId, node.HMAC)

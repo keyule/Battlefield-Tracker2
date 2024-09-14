@@ -1,0 +1,548 @@
+[
+  {
+    "territoryId": 235,
+    "region": "duck",
+    "nodeNumber": 1,
+    "reward": "5 Egg",
+    "HMAC": "EhvjA+6YVUSpg2wUAREW72su8M2XGcHfsFTzZAE1wbM="
+  },
+  {
+    "territoryId": 236,
+    "region": "duck",
+    "nodeNumber": 2,
+    "reward": "6 Egg",
+    "HMAC": "WSU3mLwZJxQ96DU13D680yvm9Uio5vqb5Lh+ZCGydq8="
+  },
+  {
+    "territoryId": 237,
+    "region": "duck",
+    "nodeNumber": 3,
+    "reward": "7 Egg",
+    "HMAC": "f7f6tZZ75mXiY/+/4Lrd7KqxqFXQ/XGRnQrnYPWjfrQ="
+  },
+  {
+    "territoryId": 238,
+    "region": "duck",
+    "nodeNumber": 4,
+    "reward": "8 Egg",
+    "HMAC": "Z/yjJd3F0TAUXyjOaVzQo55muh2EBq9KVihDzSy7K7I="
+  },
+  {
+    "territoryId": 239,
+    "region": "duck",
+    "nodeNumber": 5,
+    "reward": "6 Egg",
+    "HMAC": "lonJ7+347iXH02bxwExxb7atxGSy+NvDxQrtulA9xzQ="
+  },
+  {
+    "territoryId": 240,
+    "region": "duck",
+    "nodeNumber": 6,
+    "reward": "5 Egg",
+    "HMAC": "PYG/WQggN5291qQJW3yuj6SWrdsZhPawz+vHZCTmDDs="
+  },
+  {
+    "territoryId": 241,
+    "region": "duck",
+    "nodeNumber": 7,
+    "reward": "7 Egg",
+    "HMAC": "qfVIrTOHy0dUcKpd50m0rmUpuOINfhaBLr1IQhiU4oo="
+  },
+  {
+    "territoryId": 242,
+    "region": "duck",
+    "nodeNumber": 8,
+    "reward": "6 Egg",
+    "HMAC": "IZFy3TLOz2LJmaV6NZtlLpLbfHfNsOq3hAp57l5hiIU="
+  },
+  {
+    "territoryId": 243,
+    "region": "duck",
+    "nodeNumber": 9,
+    "reward": "6 Egg",
+    "HMAC": "Z/ywOxEAz1kV1Q3dpaA/j/Wn3MLQZ0j6ugf+3tJacHQ="
+  },
+  {
+    "territoryId": 244,
+    "region": "duck",
+    "nodeNumber": 10,
+    "reward": "7 Egg",
+    "HMAC": "UAljq1fwyIDdYE1gRRcz/U5N5W3hrfH8+6Wjxoj6m+Q="
+  },
+  {
+    "territoryId": 245,
+    "region": "duck",
+    "nodeNumber": 11,
+    "reward": "5 Egg",
+    "HMAC": "fi6ls6GIZ1bckG7EslmSv6hiz/wQ7fOykiaKUZIMVBc="
+  },
+  {
+    "territoryId": 246,
+    "region": "duck",
+    "nodeNumber": 12,
+    "reward": "6 Egg",
+    "HMAC": "kXJN+DQFUI0Diy1lixxOpz+6l67Q4LOapaGeDnhZKzI="
+  },
+  {
+    "territoryId": 247,
+    "region": "duck",
+    "nodeNumber": 13,
+    "reward": "6 Egg",
+    "HMAC": "xoc/MPFD3TUpsBYJeAbAkBUX3r0u4rjxUd7sK7XbhHs="
+  },
+  {
+    "territoryId": 248,
+    "region": "duck",
+    "nodeNumber": 14,
+    "reward": "8 Egg",
+    "HMAC": "vZ5Gg6iQQBrdIhMTEj5j6Z9Gz11IuLdGMwyCWS00+fQ="
+  },
+  {
+    "territoryId": 249,
+    "region": "duck",
+    "nodeNumber": 15,
+    "reward": "5 Egg",
+    "HMAC": "uPvq+CtwzmkUNkWoFxHXyT9FJZhJbzYRv2lSyzSqZCM="
+  },
+  {
+    "territoryId": 250,
+    "region": "duck",
+    "nodeNumber": 16,
+    "reward": "6 Egg",
+    "HMAC": "BJaZiOxmq/qLRz5s+39G5YQFrcLUK0AsXsKPeuJg8TE="
+  },
+  {
+    "territoryId": 251,
+    "region": "duck",
+    "nodeNumber": 17,
+    "reward": "7 Egg",
+    "HMAC": "7lqaj7ETSJUlWLXnEK0TuWyPSsv95kZMAIsuEcf1oZw="
+  },
+  {
+    "territoryId": 252,
+    "region": "duck",
+    "nodeNumber": 18,
+    "reward": "6 Egg",
+    "HMAC": "cSbmvgGsYzpooIf7r6wTnFYUPpdj+equINTKELrGuCU="
+  },
+  {
+    "territoryId": 253,
+    "region": "duck",
+    "nodeNumber": 19,
+    "reward": "5 Egg",
+    "HMAC": "brr+DS+vyHXcYcoEglOvVtM34BCZA1r2mRaNsVtskSc="
+  },
+  {
+    "territoryId": 254,
+    "region": "duck",
+    "nodeNumber": 20,
+    "reward": "7 Egg",
+    "HMAC": "YPRkCYm0eHXfUD8AIk/MBtnZWVRwnTGjWghXVCahzoo="
+  },
+  {
+    "territoryId": 255,
+    "region": "duck",
+    "nodeNumber": 21,
+    "reward": "13 Egg",
+    "HMAC": "GP6XTm9pmR2qgDaz5YRgwVo1sJEuBhoW1ruGVXUBn4M="
+  },
+  {
+    "territoryId": 256,
+    "region": "duck",
+    "nodeNumber": 22,
+    "reward": "13 Egg",
+    "HMAC": "Qk++HRehOysZ14eUlutPLB7ItzojDlumbfY1iX7enDE="
+  },
+  {
+    "territoryId": 257,
+    "region": "duck",
+    "nodeNumber": 23,
+    "reward": "14 Egg",
+    "HMAC": "LmxLXYvhJI6IyS+RMdg3ohZkFrIPlFyVOMPl7MtmWys="
+  },
+  {
+    "territoryId": 258,
+    "region": "duck",
+    "nodeNumber": 24,
+    "reward": "15 Egg, 1 Pearl",
+    "HMAC": "xwv5vZr/meXtBIe2/O5ev6hCwlo5Zgolp7o9O/lLCVk="
+  },
+  {
+    "territoryId": 259,
+    "region": "duck",
+    "nodeNumber": 25,
+    "reward": "20 Egg, 5 Pearl",
+    "HMAC": "7CXhkOJR9lV1xK/CcdVtYiccUjRVWW+i2wYFKVUCuPI="
+  },
+  {
+    "territoryId": 260,
+    "region": "duck",
+    "nodeNumber": 26,
+    "reward": "25 Egg, 6 Pearl",
+    "HMAC": "Gql6B1D14J12jc15YgB/In1/VFZBk1L9PCAlD8FOxlI="
+  },
+  {
+    "territoryId": 261,
+    "region": "frog",
+    "nodeNumber": 1,
+    "reward": "5 Note",
+    "HMAC": "EKsT9htCxYUTpH8rVpxt4sPdgGjfOFNMApB3ZxcZiSE="
+  },
+  {
+    "territoryId": 262,
+    "region": "frog",
+    "nodeNumber": 2,
+    "reward": "6 Note",
+    "HMAC": "RXhSWoWnWyZr33SVNil1A+b54BEuoLgFU+NKfnborL8="
+  },
+  {
+    "territoryId": 263,
+    "region": "frog",
+    "nodeNumber": 3,
+    "reward": "7 Note",
+    "HMAC": "Rw0kW4J5GqS+yX7u3dnLG88tNfE6jSbxPIxB49BTfMg="
+  },
+  {
+    "territoryId": 264,
+    "region": "frog",
+    "nodeNumber": 4,
+    "reward": "8 Note",
+    "HMAC": "k2MDuvkMpRQF0NDGCnSfZTz3u/xeJBagiBNT+cdHrTo="
+  },
+  {
+    "territoryId": 265,
+    "region": "frog",
+    "nodeNumber": 5,
+    "reward": "6 Note",
+    "HMAC": "xzrv+8WwbylSZBtlq2Q5HhFFDHk/BQyfbEPxfAvpT/8="
+  },
+  {
+    "territoryId": 266,
+    "region": "frog",
+    "nodeNumber": 6,
+    "reward": "5 Note",
+    "HMAC": "MwTHDyldOJYCDZn/qY2giemrV3vls28ZxCiGTd7XfQo="
+  },
+  {
+    "territoryId": 267,
+    "region": "frog",
+    "nodeNumber": 7,
+    "reward": "7 Note",
+    "HMAC": "B+8Pd9poRMrs5Hge87hugTLD8dEf4qJ3l7NzzYBcyLI="
+  },
+  {
+    "territoryId": 268,
+    "region": "frog",
+    "nodeNumber": 8,
+    "reward": "6 Note",
+    "HMAC": "pHAYlhB6R8ygWfX5Rd/tW9tu/lb+ijlYhORgZyQ8SB8="
+  },
+  {
+    "territoryId": 269,
+    "region": "frog",
+    "nodeNumber": 9,
+    "reward": "6 Note",
+    "HMAC": "UcOVaCafiXFBFdqXp63cGRUjJ1mhqmk48Wqx5LJoVZA="
+  },
+  {
+    "territoryId": 270,
+    "region": "frog",
+    "nodeNumber": 10,
+    "reward": "7 Note",
+    "HMAC": "3jLN2O6SMKnaixxe6Lh8KGsC1VQpsi9tfiLK+clSyA8="
+  },
+  {
+    "territoryId": 271,
+    "region": "frog",
+    "nodeNumber": 11,
+    "reward": "5 Note",
+    "HMAC": "5YnCJE0HqD294RHZcDpn1UjL1IAAEyTKJpFefs0i0rI="
+  },
+  {
+    "territoryId": 272,
+    "region": "frog",
+    "nodeNumber": 12,
+    "reward": "6 Note",
+    "HMAC": "yBycKoEtWh8hm9dakQ20hi4RRHd1m+A79QvZ6Aw5r7U="
+  },
+  {
+    "territoryId": 273,
+    "region": "frog",
+    "nodeNumber": 13,
+    "reward": "6 Note",
+    "HMAC": "hESEKnfRx+/k3aA0wgdCeBw0fF0Zxy7gHLkHUn8/y30="
+  },
+  {
+    "territoryId": 274,
+    "region": "frog",
+    "nodeNumber": 14,
+    "reward": "8 Note",
+    "HMAC": "aClKLM9u7LhvssL4l66rPSc2JBq1s73ZwYIP3OTBcSA="
+  },
+  {
+    "territoryId": 275,
+    "region": "frog",
+    "nodeNumber": 15,
+    "reward": "5 Note",
+    "HMAC": "3Q0BGq03jYvOqlI5IA01Un5pwbrGG0pBdF0h02DRU6c="
+  },
+  {
+    "territoryId": 276,
+    "region": "frog",
+    "nodeNumber": 16,
+    "reward": "6 Note",
+    "HMAC": "Fro4z9YQmGe7NWAN1P1aKJbRRpyxNW0nKAbzOcLHw0A="
+  },
+  {
+    "territoryId": 277,
+    "region": "frog",
+    "nodeNumber": 17,
+    "reward": "7 Note",
+    "HMAC": "Yn3ls5+rpSfVhHyCLaFfnPJqWiJWFHC6ZBNQ3vXn9vs="
+  },
+  {
+    "territoryId": 278,
+    "region": "frog",
+    "nodeNumber": 18,
+    "reward": "6 Note",
+    "HMAC": "wQa3ar4K20UEN5X/A/Pr7Nq5RekSouELZOkr9bZpcm4="
+  },
+  {
+    "territoryId": 279,
+    "region": "frog",
+    "nodeNumber": 19,
+    "reward": "5 Note",
+    "HMAC": "1cUX7p2LwbyjgtUbRPlslb4B14RdP6jpSa+awqPwsAc="
+  },
+  {
+    "territoryId": 280,
+    "region": "frog",
+    "nodeNumber": 20,
+    "reward": "7 Note",
+    "HMAC": "RFDqaQMwGzKcV5SDlPycOVZc4tbvveOf6e7a3rPout4="
+  },
+  {
+    "territoryId": 281,
+    "region": "frog",
+    "nodeNumber": 21,
+    "reward": "13 Note",
+    "HMAC": "NNzYXY2rjyqakfrztsk2cBS3xMwNWbomuhxPgpt+cDs="
+  },
+  {
+    "territoryId": 282,
+    "region": "frog",
+    "nodeNumber": 22,
+    "reward": "13 Note",
+    "HMAC": "3wCGdJDeclmWgU/XiGFJO08huZcdJGpMivAjREOyXew="
+  },
+  {
+    "territoryId": 283,
+    "region": "frog",
+    "nodeNumber": 23,
+    "reward": "14 Note",
+    "HMAC": "sMmI9v3T+Da5OjVTq7GoCXaqa35WnZ1T0jvOJ0rih4Q="
+  },
+  {
+    "territoryId": 284,
+    "region": "frog",
+    "nodeNumber": 24,
+    "reward": "15 Note, 1 Pearl",
+    "HMAC": "o1DsjFEs71ciVNI0a+Axe8h41dsTdiPz0/OqGZ3G8hc="
+  },
+  {
+    "territoryId": 285,
+    "region": "frog",
+    "nodeNumber": 25,
+    "reward": "20 Note, 5 Pearl",
+    "HMAC": "PfZfRoC9Cw6G6fztZAlPgDs/tR7bCMovaEBGj72Nyx8="
+  },
+  {
+    "territoryId": 286,
+    "region": "frog",
+    "nodeNumber": 26,
+    "reward": "25 Note, 6 Pearl",
+    "HMAC": "USbY5mX9A49N9dnI4prt8N82NPnCOaGrQ/uj9QwCai0="
+  },
+  {
+    "territoryId": 287,
+    "region": "gator",
+    "nodeNumber": 1,
+    "reward": "5 Skin",
+    "HMAC": "wPs//Bt3LWef/CAd7w4dhvm+Ql5kbHCNzazeg0v8ARU="
+  },
+  {
+    "territoryId": 288,
+    "region": "gator",
+    "nodeNumber": 2,
+    "reward": "6 Skin",
+    "HMAC": "6A40si2839GT71GuexvTrLNfXyKSipPORcgVcMtymu0="
+  },
+  {
+    "territoryId": 289,
+    "region": "gator",
+    "nodeNumber": 3,
+    "reward": "7 Skin",
+    "HMAC": "yMR9VNfqpJhebQR5aK1mmH4aZaGPi/uSICSjEa/3L+s="
+  },
+  {
+    "territoryId": 290,
+    "region": "gator",
+    "nodeNumber": 4,
+    "reward": "8 Skin",
+    "HMAC": "WF80jwzzcFVRRaZ+8pfiJVHbgPD1uPGhD/5mEyGRHRE="
+  },
+  {
+    "territoryId": 291,
+    "region": "gator",
+    "nodeNumber": 5,
+    "reward": "6 Skin",
+    "HMAC": "hiFIGAbQ020slfbzqqe5L+E2+pA7ErI3ccZENugf5SM="
+  },
+  {
+    "territoryId": 292,
+    "region": "gator",
+    "nodeNumber": 6,
+    "reward": "5 Skin",
+    "HMAC": "/pVRWPNqlN8UCl3ajjFQkylRmNiUYYo/adLvb/GeJVU="
+  },
+  {
+    "territoryId": 293,
+    "region": "gator",
+    "nodeNumber": 7,
+    "reward": "7 Skin",
+    "HMAC": "8rYxl/kQNUoL3HDAljAZPMXaF0OZlBiJTF/t+hEdLRw="
+  },
+  {
+    "territoryId": 294,
+    "region": "gator",
+    "nodeNumber": 8,
+    "reward": "6 Skin",
+    "HMAC": "y+zsTNCzbEM46Dcj/H9sPz7WJTHQ/gXF9atN7Xb1GmU="
+  },
+  {
+    "territoryId": 295,
+    "region": "gator",
+    "nodeNumber": 9,
+    "reward": "6 Skin",
+    "HMAC": "Y1J00IWD277zPLu4qTALj4iLcSczVNyVNBktI81aqtE="
+  },
+  {
+    "territoryId": 296,
+    "region": "gator",
+    "nodeNumber": 10,
+    "reward": "7 Skin",
+    "HMAC": "MbCVGl69HZujx/9wUGok0uBbrgGcPdrNg1IXO21/3oA="
+  },
+  {
+    "territoryId": 297,
+    "region": "gator",
+    "nodeNumber": 11,
+    "reward": "5 Skin",
+    "HMAC": "tNB/5GvtF4xYkCb6GTW+JnWZKGHvnPU0kJ0xUqWNM8M="
+  },
+  {
+    "territoryId": 298,
+    "region": "gator",
+    "nodeNumber": 12,
+    "reward": "6 Skin",
+    "HMAC": "24WUqm6Jiowtx82OdEO0fGWEoecCMwmGkZ6xH9gbxI4="
+  },
+  {
+    "territoryId": 299,
+    "region": "gator",
+    "nodeNumber": 13,
+    "reward": "6 Skin",
+    "HMAC": "Vawdycts084O72um2jGHDBc//1ndiClKgjhlJHeEvgc="
+  },
+  {
+    "territoryId": 300,
+    "region": "gator",
+    "nodeNumber": 14,
+    "reward": "8 Skin",
+    "HMAC": "yJGGHOMbfun9M/yvOWpxFCa/A6GuNqz3SKS+ykOrwsM="
+  },
+  {
+    "territoryId": 301,
+    "region": "gator",
+    "nodeNumber": 15,
+    "reward": "5 Skin",
+    "HMAC": "gOXQ2xswKDedsAGnjdYG6OcRG0a79+lSEpWbKjdR9FU="
+  },
+  {
+    "territoryId": 302,
+    "region": "gator",
+    "nodeNumber": 16,
+    "reward": "6 Skin",
+    "HMAC": "ZrIU+/wCp8mKpmLkcgE22T1vWIWGqlnMStRJep0UsKQ="
+  },
+  {
+    "territoryId": 303,
+    "region": "gator",
+    "nodeNumber": 17,
+    "reward": "7 Skin",
+    "HMAC": "LvjTcRUolWatLGedkmqaNHzOJ6NiuiLkgS70nvgbz28="
+  },
+  {
+    "territoryId": 304,
+    "region": "gator",
+    "nodeNumber": 18,
+    "reward": "6 Skin",
+    "HMAC": "mllNzYT9RWVJivmMWdpKHZeO3BkpeImKTJjIiJu8MNY="
+  },
+  {
+    "territoryId": 305,
+    "region": "gator",
+    "nodeNumber": 19,
+    "reward": "5 Skin",
+    "HMAC": "K+nuUCRRYCv/7GgHHweGMylwnbjuxcjDxjCfglteVVQ="
+  },
+  {
+    "territoryId": 306,
+    "region": "gator",
+    "nodeNumber": 20,
+    "reward": "7 Skin",
+    "HMAC": "puEIcsReBp5FOl7KgydHAorjHzmAc4Zvg6TjVx9AS6s="
+  },
+  {
+    "territoryId": 307,
+    "region": "gator",
+    "nodeNumber": 21,
+    "reward": "13 Skin",
+    "HMAC": "CvVhx8vhfpQD0ASSH1m1weIf7akFWiRtHLOpmRwi2I8="
+  },
+  {
+    "territoryId": 308,
+    "region": "gator",
+    "nodeNumber": 22,
+    "reward": "13 Skin",
+    "HMAC": "HyFrYpGh9HCplaCod0ui08U6wvOXD/4PTK57SqmH4A8="
+  },
+  {
+    "territoryId": 309,
+    "region": "gator",
+    "nodeNumber": 23,
+    "reward": "14 Skin",
+    "HMAC": "5JUGSR9tVcabCCrv5I3PtrAVzeaU0ccs84rRycR8pXo="
+  },
+  {
+    "territoryId": 310,
+    "region": "gator",
+    "nodeNumber": 24,
+    "reward": "15 Skin, 1 Pearl",
+    "HMAC": "WZh99hxElgPn5n/hAo1rtqC63iNIMErb+tB8pDQwEYo="
+  },
+  {
+    "territoryId": 311,
+    "region": "gator",
+    "nodeNumber": 25,
+    "reward": "20 Skin, 5 Pearl",
+    "HMAC": "LbfISys5CWyjSjhGLVFXVMX+h0+OiPSOeQDUOGIxSSE="
+  },
+  {
+    "territoryId": 312,
+    "region": "gator",
+    "nodeNumber": 26,
+    "reward": "25 Skin, 6 Pearl",
+    "HMAC": "l1p7w/2MCJWTgqlB4nruQKj1x5WpyfVAidSVRdF7fLI="
+  }
+]

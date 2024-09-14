@@ -155,6 +155,7 @@ class Alert:
         return response
     
     def send_discord_message_siege(message, file=None):
+        print("Sending to discord")
         url = DISCORD_WEBHOOK_SIEGE
         payload = {
             "content": message,
@@ -167,13 +168,10 @@ class Alert:
     
     def generate_table_image(table_str):
         """Generate an image from the table string."""
-
-        font_path = 'SourceHanSerif.ttc'
-        font_prop = FontProperties(fname=font_path, size=12)
-
+        print("Generating table image")
         fig, ax = plt.subplots(figsize=(12, 8))
         ax.axis('off')
-        plt.text(0.01, 0.99, table_str, family='monospace', fontsize=12, verticalalignment='top', fontproperties=font_prop)
+        plt.text(0.01, 0.99, table_str, family='monospace', fontsize=12, verticalalignment='top')
         
         # Save image to a bytes buffer
         buf = io.BytesIO()
@@ -255,38 +253,52 @@ class Battlefield:
 
         # Check thresholds and send alerts
         for monster in self.monster_list.monsters:
-            if monster.is_below_threshold(500000):
-                self.monster_list.alert_for_monster(monster, 500000)
+            if monster.is_below_threshold(1300000):
+                self.monster_list.alert_for_monster(monster, 1300000)
 
     def process_siege_stuff(self):
         api_data = self.api_manager.get_siege_data()
         self.node_list.update_nodes_from_api(api_data, self.api_manager.get_node_detail)
 
         rows = []
-        # Create a PrettyTable object
-        table = PrettyTable()
-        table.field_names = ["ID", "Region", "Node", "Reward", "Shield End (+8)", "Time Left", "Defending Guild", "Defenders FTL"]
-
-        # Add rows to the table
         for node in self.node_list.nodes:
-            shield_end_time_sgt = Utility.convert_to_sgt(node.shieldEndTime)
-            time_left = Utility.calculate_time_difference(shield_end_time_sgt)
-            
-            if time_left.total_seconds() < 0:
-                time_left_str = "-"
-            else:
-                time_left_str = Utility.format_time_left(time_left)
+            if node.shieldEndTime:
+                shield_end_time_sgt = Utility.convert_to_sgt(node.shieldEndTime)
+                time_left = Utility.calculate_time_difference(shield_end_time_sgt)
 
-            table.add_row([
+                if time_left.total_seconds() < 0:
+                    time_left_str = "-"
+                else:
+                    time_left_str = Utility.format_time_left(time_left)
+
+                shield_end_time_str = shield_end_time_sgt.strftime("%H:%M")
+            else:
+                shield_end_time_str = "N/A"
+                time_left_str = "N/A"
+                time_left = timedelta.max  # Assign a large timedelta for sorting purpose
+
+            rows.append([
                 node.territoryId,
                 node.region,
                 node.nodeNumber,
                 node.reward,
-                shield_end_time_sgt.strftime("%H:%M"),  # Convert to SGT and show hour and minute
+                shield_end_time_str,
                 time_left_str,
-                node.defendingGuild,
-                ", ".join(map(str, node.defendersFTL)) # Joining defendersFTL as a comma-separated string
+                time_left  # Include raw timedelta for sorting
             ])
+
+        # Sort rows based on the time_left timedelta, ascending
+        rows.sort(key=lambda x: x[6])
+
+        # Create a PrettyTable object
+        table = PrettyTable()
+        table.field_names = ["ID", "Region", "Node", "Reward", "Shield End (+8)", "Time Left"]
+
+        # Add sorted rows to the table, excluding the timedelta
+        for row in rows:
+            table.add_row(row[:-1])  # Exclude the last element which is the raw timedelta
+
+        print(table)
 
         # Convert the table to a string
         table_str = table.get_string()
@@ -296,15 +308,24 @@ class Battlefield:
         
         # Send the image to Discord
         Alert.send_discord_message_siege("Battlefield Update:", file=('table.png', table_image, 'image/png'))
-        print(table)
+        #print(table)
 
     def run(self):
+        
+        count = 0
         try:
             while self.running:
                 self.process_mobs(self.api_manager.get_battlefields, self.mob_list)
-                #self.process_mobs(self.api_manager.get_world_battlefields, self.world_mob_list, "Rift")
+                self.process_mobs(self.api_manager.get_world_battlefields, self.world_mob_list, "Rift")
                 self.process_upper_battlefield()
-                self.process_siege_stuff()
+
+                if count == 0: 
+                    print("did this run?")
+                    self.process_siege_stuff()
+                    count = 5
+
+                
+                count = count - 1
 
                 time_str = datetime.now(TIMEZONE).strftime("%H:%M:%S")
                 print("Last Updated:", time_str)
